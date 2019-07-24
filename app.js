@@ -33,15 +33,7 @@ app.use('/director', directoresRouter )
 app.use('/pelicula', peliculaesRouter)
   
 // catch 404 and forward to error handler
-/*
-app.use(function(req, res, next) {
-  console.log('404oooooo');
- // res.render('Ruta no existente');
 
-  next(createError(404));
-
-});
-*/
 app.use(function(req, res, next) {
   var err = new Error('No existe la ruta');
   err.status = 404;
