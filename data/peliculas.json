@@ -22,31 +22,31 @@
     {
         "name": "Traffic",
         "director": "Steven Soderbergh",
-        "publication_date": ""
+        "publication_date": "2000/12/06"
     },
     {
         "name": "Gladiator",
         "director": "Ridley Scott",
-        "publication_date": ""
+        "publication_date": "2000/05/17"
     },
     {
         "name": "Pulp Fiction",
         "director": "Quentin Tarantino",
-        "publication_date": ""
+        "publication_date": "1995/01/13"
     },
     {
         "name": "Heat",
         "director": "Michael Mann ",
-        "publication_date": ""
+        "publication_date": "1996/02/09"
     },
     {
         "name": "Titanic",
         "director": "James Cameron",
-        "publication_date": ""
+        "publication_date": "1998/01/08"
     },
     {
         "name": "Hellboy",
         "director": "Guillermo del Toro",
-        "publication_date": ""
+        "publication_date": "2004/09/23"
     }
 ]
