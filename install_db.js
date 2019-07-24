@@ -7,14 +7,16 @@
 const readline = require('readline')
 
 const db = require('./lib/connectMongoose')
-const Anuncio = require('./models/Anuncio')
-const anunciosData = require('./data/anuncios.json') 
+const Director = require('./models/Director')
+const directoresData = require('./data/directores.json') 
+const Pelicula = require('./models/Pelicula')
+const peliculasData = require('./data/peliculas.json') 
 
 db.once('open', async ()=> {
     try{
 
         //preguntar al usuario si quiere borrar la base de datos.
-        const respuesta = await preguntaUsuario('¿Estas seguro que quieres que borre toda la base de datos? (no)')
+        const respuesta = await preguntaUsuario('¿Estas seguro que quieres inicializar la base de datos? (no)')
         
         if(respuesta.toLowerCase() !== 'si'){
             console.log('Abortado!')
@@ -22,7 +24,8 @@ db.once('open', async ()=> {
         }
 
        // await initAnuncios()
-        await initModel(Anuncio, anunciosData, 'anuncios') 
+        await initModel(Director, directoresData, 'directores') 
+        await initModel(Pelicula, peliculasData, 'peliculas')
 
 
         db.close()

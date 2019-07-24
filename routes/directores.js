@@ -17,24 +17,6 @@ router.get('/todos', async (req, res, next) => {
  })
 
 
- router.post('/todas', async (req, res, next) => {
-    try {
-        const data = req.body
-
-        const pelicula = new Pelicula(data)
-        const peliculaGuardada = await pelicula.save() 
-
-        res.json({
-            success: true,
-            result: peliculaGuardada
-        })
-
-    } catch (err) {
-        next(err)
-        return
-    }
-
-})
 
 router.post('/todos', async (req, res, next) => {
     try {
@@ -54,5 +36,42 @@ router.post('/todos', async (req, res, next) => {
     }
 
 })
+
+router.get('/:id', async (req, res, next) => {
+    try {
+        const id = req.params.id
+
+        const director = await Director.findById(id).exec() 
+        res.json({
+            success: true,
+            result: director
+        })
+
+
+    } catch (err) {
+        next(err)
+        return
+    }
+})
+
+
+router.delete('/:id', async (req, res, next) => {
+    try {
+        const id = req.params.id
+
+        await Director.deleteMany({
+            _id: id
+        }).exec()
+        res.json({
+            success: true
+        })
+
+    } catch (err) {
+        next(err)
+        return
+    }
+})
+
+
 
  module.exports = router

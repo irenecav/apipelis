@@ -37,6 +37,40 @@ router.get('/todas', async (req, res, next) => {
 
 })
 
+router.get('/:id', async (req, res, next) => {
+    try {
+        const id = req.params.id
+
+        const pelicula = await Pelicula.findById(id).exec() 
+        res.json({
+            success: true,
+            result: pelicula
+        })
+
+
+    } catch (err) {
+        next(err)
+        return
+    }
+})
+
+
+router.delete('/:id', async (req, res, next) => {
+    try {
+        const id = req.params.id
+
+        await Pelicula.deleteMany({
+            _id: id
+        }).exec()
+        res.json({
+            success: true
+        })
+
+    } catch (err) {
+        next(err)
+        return
+    }
+})
 
 
  module.exports = router

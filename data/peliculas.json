@@ -1,0 +1,52 @@
+[
+    {
+        "name": "La Lista de Schindler",
+        "director": "Steven Spielberg",
+        "publication_date": ""
+    },
+    {
+        "name": "El Señor de los Anillos",
+        "director": "Peter Jackson",
+        "publication_date": ""
+    },
+    {
+        "name": "Infiltrados",
+        "director": "Martin Scorsese",
+        "publication_date": ""
+    },
+    {
+        "name": "The Dark Knight",
+        "director": "Christopher Nolan",
+        "publication_date": ""
+    },
+    {
+        "name": "Traffic",
+        "director": "Steven Soderbergh",
+        "publication_date": ""
+    },
+    {
+        "name": "Gladiator",
+        "director": "Ridley Scott",
+        "publication_date": ""
+    },
+    {
+        "name": "Pulp Fiction",
+        "director": "Quentin Tarantino",
+        "publication_date": ""
+    },
+    {
+        "name": "Heat",
+        "director": "Michael Mann ",
+        "publication_date": ""
+    },
+    {
+        "name": "Titanic",
+        "director": "James Cameron",
+        "publication_date": ""
+    },
+    {
+        "name": "Hellboy",
+        "director": "Guillermo del Toro",
+        "publication_date": ""
+    }
+]
