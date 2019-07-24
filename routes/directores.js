@@ -2,6 +2,8 @@
  const express = require('express')
  const router = express.Router()
  const Director = require('../models/Director')
+ const Pelicula = require('../models/Pelicula')
+
 
 router.get('/todos', async (req, res, next) => {
 
@@ -37,6 +39,27 @@ router.post('/todos', async (req, res, next) => {
 
 })
 
+router.get('/:id/peliculas', async (req, res, next) => {
+    try {
+        const id = req.params.id
+
+        const director = await Director.findById(id).exec()
+
+        const pelis = await Pelicula.find({ director: director.name}).exec()
+
+        res.json({
+            success: true,
+            result: pelis
+        })
+
+
+    } catch (err) {
+        next(err)
+        return
+    }
+})
+
+
 router.get('/:id', async (req, res, next) => {
     try {
         const id = req.params.id
@@ -71,7 +94,7 @@ router.delete('/:id', async (req, res, next) => {
         return
     }
 })
-
+ 
 
 
  module.exports = router

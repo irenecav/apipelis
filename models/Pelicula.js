@@ -13,7 +13,7 @@ const peliculaSchema = mongoose.Schema({
 const Pelicula = mongoose.model('Pelicula', peliculaSchema)
 
 Pelicula.find().exec((err, peliculas) => {
-    console.log(peliculas)
+    //console.log(peliculas)
 })
 
 module.exports = Pelicula

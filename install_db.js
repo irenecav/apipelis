@@ -1,9 +1,8 @@
 'use strict'
 
 /**
- * Crear los datos iniciales  de la base de datos
+ * Populate the DB with initial data
  */
-//ponemos primeros los require de node, despues los de los paketes de npm y mas tarde os propios de nuestra aplicacion 
 const readline = require('readline')
 
 const db = require('./lib/connectMongoose')
@@ -15,7 +14,6 @@ const peliculasData = require('./data/peliculas.json')
 db.once('open', async ()=> {
     try{
 
-        //preguntar al usuario si quiere borrar la base de datos.
         const respuesta = await preguntaUsuario('¿Estas seguro que quieres inicializar la base de datos? (no)')
         
         if(respuesta.toLowerCase() !== 'si'){
@@ -23,7 +21,6 @@ db.once('open', async ()=> {
             process.exit(0)
         }
 
-       // await initAnuncios()
         await initModel(Director, directoresData, 'directores') 
         await initModel(Pelicula, peliculasData, 'peliculas')
 
@@ -32,7 +29,7 @@ db.once('open', async ()=> {
 
     }catch(err){
         console.log('Hubo un error', err)
-        process.exit(1) //ha terminado el proceso de erros
+        process.exit(1) 
     }
 
 })
@@ -58,7 +55,6 @@ interfaz.question(pregunta, answer =>{
 async function initModel(Model, data, modelName){
     const deleted = await Model.deleteMany()
     console.log(`Eliminados ${deleted.n} ${modelName}` )
-//ahora creamos los anuncios iniciales. Que estan en un fichero JSON de la carpeta data
    const insertado = await Model.insertMany(data)
    console.log(`Insertado ${insertado.length} ${modelName}. `)
     

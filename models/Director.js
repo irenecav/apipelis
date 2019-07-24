@@ -8,7 +8,7 @@ const directorSchema = mongoose.Schema({
 const Director = mongoose.model('Director', directorSchema)
 
 Director.find().exec((err, directores) => {
-    console.log(directores)
+    //console.log(directores)
 })
 
 module.exports = Director
